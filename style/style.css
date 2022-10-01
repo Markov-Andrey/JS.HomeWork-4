@@ -66,6 +66,15 @@ td {
 	font-size: 20px;
 	text-align: center;
 }
+.weekend {
+	border: 1px solid black;
+	padding: 2px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	background-color: red;
+	font-weight: 700;
+}
 ul {
 	margin: 5px;
 	font-size: 20px;

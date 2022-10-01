@@ -101,3 +101,19 @@ function task4Array() {
 	}
 	document.write(`</tr></table>`);
 };
+
+//Task 5
+function task5ArrayWeek() {
+	document.write (`<br>`);
+	let task5ArrayWeek = ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"];
+	let now = new Date();//берем сегодняшнюю дату с помощью объекта Date
+	document.write(`<table><tr><td>Неделя</td>`);
+	for (i = 0; i < task5ArrayWeek.length; i++) {
+		if (i < task5ArrayWeek.length - 2) {
+			document.write(`<td>${task5ArrayWeek[i]}</td>`);
+		} else {
+			document.write(`<td class = "weekend">${task5ArrayWeek[i]}</td>`);
+		};
+	};
+	document.write(`</tr></table>`);
+};
