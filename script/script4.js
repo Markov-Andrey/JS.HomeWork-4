@@ -65,12 +65,39 @@ function task3Array() {
 	while (i < task3ArrayWhile.length) {
 		resultWhile += task3ArrayWhile[i];
 		i++;
-	}
+	};
 	//доп проверка на равность суммы в разных массивах
 	document.write(`<p>Сумма массива FOR равен ${resultFor} и массива While равен ${resultWhile}.<br>`)
 	if (resultFor = resultWhile) {
 		 document.write(`Массивы равны, удивительно!</p>`)
 	} else {
 		 document.write(`Массивы не равны, печально!</p>`)
+	};
+};
+
+//Task 4
+function task4Array() {
+	document.write (`Мы создали 2 массива: "task4ArrayString" (искомый) и "task4ArrayNumber" (пустой).
+	Запускаем цикл "for" и вкладываем в него условное ветвления "if".<br>
+	Условием является проверка первого значения каждого элемента массива на 
+	требуемое значение (1, 2, 5) с помощью объекта "Number ()".<br>
+	При условии выполнения условия мы добавляем элемент в "новый" массив "task4ArrayNumber" 
+	с помощью метода "push".<br>
+	При выводе значений нового массива для красоты мы оборачиваем их в таблицу с посощью доп.цикла`)
+	let task4ArrayString = ["10","20","30","50","235","3000"],
+	task4ArrayNumber = [];
+	for (i = 0; i < task4ArrayString.length; i++) {
+		if (
+			(Number(task4ArrayString[i][0]) === 1) ||
+			(Number(task4ArrayString[i][0]) === 2) ||
+			(Number(task4ArrayString[i][0]) === 5)
+		) {
+			task4ArrayNumber.push(task4ArrayString[i]);
+		};
+	};
+	document.write(`<table><tr><td>Результат</td>`);
+	for (i = 0; i < task4ArrayNumber.length; i++) {
+		document.write(`<td>${task4ArrayNumber[i]}</td>`);
 	}
+	document.write(`</tr></table>`);
 };
