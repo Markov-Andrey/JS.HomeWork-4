@@ -226,7 +226,7 @@ function task8Arr() {
 function task9Arr() {
 	document.write (`Создаем требуемый массив (task9Array), вводим переменную-счетчик (х)<br>
 		Создаем цикл внутри которого проверяем значение элементов массива на значение "undefined". При выполнении записываем переменную х+1<br>
-		Провекра выполнена через тернарный оператор (меньше символов === быстрее работа ? выше наша ценность как it-специалистов : ничего не стоим)
+		Проверка выполнена через тернарный оператор (меньше символов === быстрее работа ? выше наша ценность как it-специалистов : ничего не стоим)
 		<br><br>`);
 	let task9Array = [5, 9, 21, , , 9, 78, , , , 6],
 	x = 0;
@@ -234,4 +234,38 @@ function task9Arr() {
 		task9Array[i] === undefined ? x += 1 : x
 	};
 	document.write (`<b>Ответ: ${x}</b>`);
+};
+
+//Task 10
+function task10Arr() {
+	document.write (`Создано 2 массива в которых мы заранее будем знать - выполнятся ли условия задачи или нет<br>
+		Создаем 2 переменные с методом indexOf и lastIndexOf, это позволит найти в документе индекс 1-го нуля (index) и последнего нуля (lastIndex).<br>
+		Начинаем проверку if - является ли индекс первого 0 меньше индекса последнего 0?<br>
+		Если проверка выполнена запускаем цикл подсчета значений от индекса первого 0 до индекса последнего 0 используя другую переменную (sum). Если проверка не выполнена, то сообщаем это пользователю.
+		<br><br>`);
+	let task10ArrayOne = [48,9,0,4,21,2,1,0,8,84,76,8,4,13,2,0],
+	task10ArrayTwo = [1,8,1,13,76,8,7,2,22,3,2,3,2],
+	sum = 0,
+	index = task10ArrayOne.indexOf(0),
+	lastIndex = task10ArrayOne.lastIndexOf(0);
+	if (index < lastIndex) {
+		for (index; index < lastIndex; index++) {
+			sum += task10ArrayOne[index];
+		};
+		document.write (`<b>Первый массив - Ответ: ${sum}</b>`)
+	} else {
+		document.write (`<b>Первый массив - Ответ: Нулей меньше 2! Так не работает</b>`);
+	};
+	document.write (`<br>`)
+	sum = 0,
+	index = task10ArrayTwo.indexOf(0),
+	lastIndex = task10ArrayTwo.lastIndexOf(0);
+	if (index < lastIndex) {
+		for (index; index < lastIndex; index++) {
+			sum += task10ArrayTwo[index];
+		};
+		document.write (`<b>Второй массив - Ответ: ${sum}</b>`)
+	} else {
+		document.write (`<b>Второй массив - Ответ: Нулей меньше 2! Так не работает</b>`);
+	};
 };
