@@ -104,16 +104,41 @@ function task4Array() {
 
 //Task 5
 function task5ArrayWeek() {
-	document.write (`<br>`);
-	let task5ArrayWeek = ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"];
-	let now = new Date();//берем сегодняшнюю дату с помощью объекта Date
-	document.write(`<table><tr><td>Неделя</td>`);
-	for (i = 0; i < task5ArrayWeek.length; i++) {
-		if (i < task5ArrayWeek.length - 2) {
-			document.write(`<td>${task5ArrayWeek[i]}</td>`);
-		} else {
-			document.write(`<td class = "weekend">${task5ArrayWeek[i]}</td>`);
-		};
+	document.write (`Мы создали 2 массива: с днями недели (arrayWeek) и с месяцами (arrayMonth).<br>
+		Мы создали переменную (now) в которую внесли сегодняшнюю дату с помощью объекта "new Date()".<br>
+		Создано много переменных которые используя разные методы берут из переменной "now" требуемые значения - год, месяц, день в месяце, день недели, часы, минуты (в файле JS прописано подробнее).<br>
+		Переменная (nowWeek) дня недели вызванная методом "getDay" имеет свою специфику и имеет значения с ВС = 0 до СБ = 6, мы с помощью тернарного оператора переводим значение к привычному нам ПН = 0 до ВС = 6.<br>
+		Далее выводим значения даты и времени в документе.<br>
+		Создаем цикл for(i) от 0 до кол-ва дней недели. Проверяем является ли переменная i-итерации сегодняшним днем недели (nowWeek), если выполняется выделяем день нужным нам классом "today", заданным в style.css, если нет - продолжаем проверку.<br>
+		Теперь мы проверяем является ли день выходным? Самым простым решением с моей точки зрения оказалось отрезать 2 последних значения от массива с днями недели (arrayWeek), при условии выполнения мы создали обычные ячейки таблицы, иначе ячейкам таблицы мы присвоили отдельный класс "weekend", заданный в style.css<br><br>`);
+	let arrayWeek = ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"];
+	let arrayMonth = ["января","февраля",
+					"марта","апреля",
+					"мая","июня",
+					"июля","августа",
+					"сентября","октября",
+					"ноября","декабря",];
+	let now = new Date(),//берем сегодняшнюю дату с помощью объекта Date из системных настроек
+	nowYear = now.getFullYear(), //узнаем год, метод getYear устарел
+	nowMonth = now.getMonth(), //узнаем месяц от 0 до 11
+	nowWeek = now.getDay(), // узнаем день недели от 0(вс) до 6
+	nowDay = now.getDate(), // узнаем день месяца от 1 до конца месяца
+	nowHours = now.getHours(), // узнаем часы
+	nowMinutes = now.getMinutes(); // узнаем минуты
+	nowWeek === 0 ? nowWeek = 6 : nowWeek -= 1;
+	//перевод значения недели от ВС (0) до 6 (СБ) к привычному от ПН (0) до ВС (6) с помощью тернарного оператора (вместо if)
+	document.write(`<b>А вы знали что сейчас<br>
+		${nowDay} ${arrayMonth[nowMonth]} ${nowYear} года<br>
+		${nowHours}:${nowMinutes}</b>`);
+	document.write(`<table><tr><td><b>Неделя</b></td>`);
+	for (i = 0; i < arrayWeek.length; i++) {
+		if (i == nowWeek) {
+				document.write(`<td class = "today">${arrayWeek[i]}</td>`);
+			} else if (i < arrayWeek.length - 2) {
+						document.write(`<td>${arrayWeek[i]}</td>`);
+					} else {
+						document.write(`<td class = "weekend">${arrayWeek[i]}</td>`);
+					};
 	};
 	document.write(`</tr></table>`);
 };
