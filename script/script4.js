@@ -1,5 +1,5 @@
 //Task 1
-function task1Array() {
+function task1Arr() {
 	document.write (`Выводим значения массива через цикл 
 		от 0 до последнего значения, вычиленного методом ".length" 
 		массива<br><br>`)
@@ -11,7 +11,7 @@ function task1Array() {
 };
 
 //Task 2
-function task2Array() {
+function task2Arr() {
 	document.write (`Создаем цикл от 0 до последнего значения массива,
 		добавляем условие > -10 и < -3, при выполнении условия выводим значения
 		<br><br>`)
@@ -25,7 +25,7 @@ function task2Array() {
 };
 
 //Task 3
-function task3Array() {
+function task3Arr() {
 	document.write (`Мы создали 2 пустых массива "task3ArrayFor" и "task3ArrayWhile".
 		С помощью циклов For и While заполнили массив от 23 до 57 (включительно).
 		При	отображении массива в документе мы создали таблицу и с помощью 
@@ -76,7 +76,7 @@ function task3Array() {
 };
 
 //Task 4
-function task4Array() {
+function task4Arr() {
 	document.write (`Мы создали 2 массива: "task4ArrayString" (искомый) и "task4ArrayNumber" (пустой).
 		Запускаем цикл "for" и вкладываем в него условное ветвления "if".<br>
 		Условием является проверка первого значения каждого элемента массива на 
@@ -103,7 +103,7 @@ function task4Array() {
 };
 
 //Task 5
-function task5ArrayWeek() {
+function task5ArrWeek() {
 	document.write (`Создаем 2 массива: с днями недели (arrayWeek) и с месяцами (arrayMonth).<br>
 		Создаем переменную (now) в которую внесли сегодняшнюю дату с помощью объекта "new Date()".<br>
 		Создано много переменных которые используя разные методы берут из переменной "now" требуемые значения - год, месяц, день в месяце, день недели, часы, минуты (в файле JS прописано подробнее).<br>
@@ -144,7 +144,7 @@ function task5ArrayWeek() {
 };
 
 //Task 6
-function task6Array() {
+function task6Arr() {
 	document.write (`Мы создали пустой массива (task6Array).
 		С помощью цикла For заполнили массив от 0 до 100 (включительно).<br>
 		Последний элемент массива мы вывели установив номер значения массива,<br>
@@ -158,7 +158,7 @@ function task6Array() {
 }
 
 //Task 7
-function task7Array() {
+function task7Arr() {
 	document.write (`Создаем бесконечный цикл, в котором принимаем значения пользователя (i).<br>
 		По очереди проверяем внутри цикла:<br>
 		является ли i пустой строкой, тогда прерываем цикл;<br>
@@ -195,7 +195,7 @@ function task7Array() {
 };
 
 //Task 8
-function task8Array() {
+function task8Arr() {
 	document.write (`Создаем требуемый массив (task8Array), вводим переменную для обозначения размера массива<br>
 		Применяем к массиву task8Array метод reverse.<br>
 		Отображаем массив task8ArrayReverse на странице в виде таблицы через цикл for.<br>
@@ -220,4 +220,18 @@ function task8Array() {
 		i--;
 	};
 	document.write (`</tr></table>`);
+};
+
+//Task 9
+function task9Arr() {
+	document.write (`Создаем требуемый массив (task9Array), вводим переменную-счетчик (х)<br>
+		Создаем цикл внутри которого проверяем значение элементов массива на значение "undefined". При выполнении записываем переменную х+1<br>
+		Провекра выполнена через тернарный оператор (меньше символов === быстрее работа ? выше наша ценность как it-специалистов : ничего не стоим)
+		<br><br>`);
+	let task9Array = [5, 9, 21, , , 9, 78, , , , 6],
+	x = 0;
+	for (i = 0; i < task9Array.length; i++) {
+		task9Array[i] === undefined ? x += 1 : x
+	};
+	document.write (`<b>Ответ: ${x}</b>`);
 };
