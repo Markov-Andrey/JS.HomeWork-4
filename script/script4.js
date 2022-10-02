@@ -193,3 +193,31 @@ function task7Array() {
 	};
 	document.write (`</tr></table>`);
 };
+
+//Task 8
+function task8Array() {
+	document.write (`Создаем требуемый массив (task8Array), вводим переменную для обозначения размера массива<br>
+		Применяем к массиву task8Array метод reverse.<br>
+		Отображаем массив task8ArrayReverse на странице в виде таблицы через цикл for.<br>
+		Разворачиваем начальный цикл снова через метод reverse, чтобы опробовать цикл while<br>
+		Создаем цикл с i равной длине массива, итерации считаются пока i >= 0, уменьшаем i на 1 с каждой итерацией. Результат выводим на страницу в виде таблицы.
+		<br><br>`);
+	let task8Array = [12, false, 'Текст', 4, 2, -5, 0],
+	task8ArrayLength = task8Array.length - 1;
+	task8Array.reverse();
+	//метод Reverse
+	document.write (`<table><tr><td><b>Метод Reverse</b></td>`);
+	for (i = 0; i <= task8ArrayLength; i++) {
+		document.write (`<td>${task8Array[i]}</td>`);
+	};
+	document.write (`</tr>`);
+	//цикл While
+	document.write (`<tr><td><b>Цикл While</b></td>`);
+	task8Array.reverse();
+	i = task8ArrayLength;
+	while (i >= 0) {
+		document.write (`<td>${task8Array[i]}</td>`);
+		i--;
+	};
+	document.write (`</tr></table>`);
+};
