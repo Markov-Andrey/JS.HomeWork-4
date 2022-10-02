@@ -2,7 +2,7 @@
 function task1Array() {
 	document.write (`Выводим значения массива через цикл 
 	от 0 до последнего значения, вычиленного методом ".length" 
-	массива<br>`)
+	массива<br><br>`)
 	let task1Array = [1,2,3,4,5],
 	arrayLength = task1Array.length;
 	for (let i = 0; i < arrayLength; i++) {
@@ -14,7 +14,7 @@ function task1Array() {
 function task2Array() {
 	document.write (`Создаем цикл от 0 до последнего значения массива,
 	добавляем условие > -10 и < -3, при выполнении условия выводим значения
-	<br>`)
+	<br><br>`)
 	let task2Array = [-2,-1,-3,15,0,-4,2,-5,9,-15,0,4,5,-6,10,7],
 	arrayLength = task2Array.length;
 	for (let i = 0; i < arrayLength; i++) {
@@ -37,7 +37,7 @@ function task3Array() {
 	for (let i = 23; i <= 57; i++){
 		task3ArrayFor.push(i);
 	};
-	document.write (`<table><tr><td>Цикл "For"</td>`);
+	document.write (`<table><tr><td><b>Цикл "For"</b></td>`);
 	for (i = 0; i < task3ArrayFor.length; i++) {
 		document.write (`<td>${task3ArrayFor[i]}</td>`);
 	}
@@ -48,7 +48,7 @@ function task3Array() {
 		task3ArrayWhile.push(i);
 		i++;
 	};
-	document.write (`</tr><tr><td>Цикл "While"</td>`);
+	document.write (`</tr><tr><td><b>Цикл "While"</b></td>`);
 	i = 0;
 	while (i < task3ArrayWhile.length) {
 		document.write (`<td>${task3ArrayWhile[i]}</td>`);
@@ -95,7 +95,7 @@ function task4Array() {
 			task4ArrayNumber.push(task4ArrayString[i]);
 		};
 	};
-	document.write(`<table><tr><td>Результат</td>`);
+	document.write(`<table><tr><td><b>Результат</b></td>`);
 	for (i = 0; i < task4ArrayNumber.length; i++) {
 		document.write(`<td>${task4ArrayNumber[i]}</td>`);
 	}
@@ -104,13 +104,13 @@ function task4Array() {
 
 //Task 5
 function task5ArrayWeek() {
-	document.write (`Мы создали 2 массива: с днями недели (arrayWeek) и с месяцами (arrayMonth).<br>
-		Мы создали переменную (now) в которую внесли сегодняшнюю дату с помощью объекта "new Date()".<br>
+	document.write (`Создаем 2 массива: с днями недели (arrayWeek) и с месяцами (arrayMonth).<br>
+		Создаем переменную (now) в которую внесли сегодняшнюю дату с помощью объекта "new Date()".<br>
 		Создано много переменных которые используя разные методы берут из переменной "now" требуемые значения - год, месяц, день в месяце, день недели, часы, минуты (в файле JS прописано подробнее).<br>
-		Переменная (nowWeek) дня недели вызванная методом "getDay" имеет свою специфику и имеет значения с ВС = 0 до СБ = 6, мы с помощью тернарного оператора переводим значение к привычному нам ПН = 0 до ВС = 6.<br>
+		Переменная (nowWeek) дня недели вызванная методом "getDay" имеет свою специфику и имеет значения с ВС = 0 до СБ = 6, с помощью тернарного оператора переводим значение к привычному нам ПН = 0 до ВС = 6.<br>
 		Далее выводим значения даты и времени в документе.<br>
 		Создаем цикл for(i) от 0 до кол-ва дней недели. Проверяем является ли переменная i-итерации сегодняшним днем недели (nowWeek), если выполняется выделяем день нужным нам классом "today", заданным в style.css, если нет - продолжаем проверку.<br>
-		Теперь мы проверяем является ли день выходным? Самым простым решением с моей точки зрения оказалось отрезать 2 последних значения от массива с днями недели (arrayWeek), при условии выполнения мы создали обычные ячейки таблицы, иначе ячейкам таблицы мы присвоили отдельный класс "weekend", заданный в style.css<br><br>`);
+		Теперь проверяем является ли день выходным? Самым простым решением (с моей точки зрения) оказалось отрезать 2 последних значения от массива с днями недели (arrayWeek.length - 2), при условии выполнения создаем обычные ячейки таблицы, иначе ячейкам таблицы присваиваем отдельный класс "weekend", заданный в style.css<br><br>`);
 	let arrayWeek = ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"];
 	let arrayMonth = ["января","февраля",
 					"марта","апреля",
@@ -121,7 +121,7 @@ function task5ArrayWeek() {
 	let now = new Date(),//берем сегодняшнюю дату с помощью объекта Date из системных настроек
 	nowYear = now.getFullYear(), //узнаем год, метод getYear устарел
 	nowMonth = now.getMonth(), //узнаем месяц от 0 до 11
-	nowWeek = now.getDay(), // узнаем день недели от 0(вс) до 6
+	nowWeek = now.getDay(), // узнаем день недели от 0(вс) до 6 (cб)
 	nowDay = now.getDate(), // узнаем день месяца от 1 до конца месяца
 	nowHours = now.getHours(), // узнаем часы
 	nowMinutes = now.getMinutes(); // узнаем минуты
@@ -129,7 +129,7 @@ function task5ArrayWeek() {
 	//перевод значения недели от ВС (0) до 6 (СБ) к привычному от ПН (0) до ВС (6) с помощью тернарного оператора (вместо if)
 	document.write(`<b>А вы знали что сейчас<br>
 		${nowDay} ${arrayMonth[nowMonth]} ${nowYear} года<br>
-		${nowHours}:${nowMinutes}</b>`);
+		${nowHours}:${String(nowMinutes < 10 ?'0' + nowMinutes : nowMinutes)}</b>`);//для красоты показываем "0" перед минутами до 10
 	document.write(`<table><tr><td><b>Неделя</b></td>`);
 	for (i = 0; i < arrayWeek.length; i++) {
 		if (i == nowWeek) {
