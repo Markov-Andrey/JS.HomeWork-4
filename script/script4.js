@@ -156,3 +156,40 @@ function task6Array() {
 	document.write(`<b>Последний элемент массива от 0 до 100 равен 
 		${task6Array[task6Array.length - 1]}</b>`);
 }
+
+//Task 7
+function task7Array() {
+	document.write (`Создаем бесконечный цикл, в котором принимаем значения пользователя (i).<br>
+		По очереди проверяем внутри цикла:<br>
+		является ли i пустой строкой, тогда прерываем цикл;<br>
+		является ли i типом Not a Number (isNaN), если да, то не берем значение и просим написать снова;<br>
+		иначе берем это значение в обработку.<br>
+		Добавляем i в массив (task7Array), через цикл выводим его в таблицу.<br>
+		Создаем 2-й массив (task7SortArray), в который задаем 1-й массив введенных чисел (task7Array) с методом sort.<br>
+		По уроку Сергея добавляем в сортировку функцию позволяющую сортировать цифры в порядке возрастания.
+		<br><br>`);
+	let task7Array = [];
+	let task7SortArray = [];
+	while (true) {
+		i = +prompt ('Вводите числа. Когда устанете - оставьте поле пустым');
+		if (i == '') {
+			break;
+		} else if (Number.isNaN(i)) {
+			alert ('Вводите числа, а не строки. Попробуем ещё');
+		} else {
+			task7Array.push(i)
+		};
+	};
+	document.write (`<table><tr><td><b>Все значения</b></td>`);
+	for (i = 0; i < task7Array.length; i++) {
+		document.write (`<td>${task7Array[i]}</td>`);
+	};
+	task7SortArray = task7Array.sort(function(a, b) {
+		return a - b;
+	});
+	document.write (`</tr><tr><td><b>Сортировка</b></td>`);
+	for (i = 0; i < task7SortArray.length; i++) {
+		document.write (`<td>${task7SortArray[i]}</td>`);
+	};
+	document.write (`</tr></table>`);
+};
