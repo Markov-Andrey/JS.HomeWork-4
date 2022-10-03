@@ -261,11 +261,45 @@ function task10Arr() {
 	index = task10ArrayTwo.indexOf(0),
 	lastIndex = task10ArrayTwo.lastIndexOf(0);
 	if (index < lastIndex) {
-		for (index; index < lastIndex; index++) {
-			sum += task10ArrayTwo[index];
-		};
+		for (index; index < lastIndex; index++) sum += task10ArrayTwo[index];
 		document.write (`<b>Второй массив - Ответ: ${sum}</b>`)
 	} else {
 		document.write (`<b>Второй массив - Ответ: Нулей меньше 2! Так не работает</b>`);
 	};
+};
+
+//Task 11
+function task11() {
+	document.write (`Создано 2 переменные (i и j) для счетчика итераций.<br>
+		Создана переменная max, в которой указывается желаемая высота треугольника.<br>
+		Созданы 2 переменные для записи текста (space и delta).<br>
+		Строим треугольник мы с вершины, сперва строку заполняем пробелами, а после - галочками.<br>
+		Начинаем цикл while от 0 до высоты треугольника(max).<br>
+		Внутри запускаем цикл for от 0 до до высоты треугольника (j) с вычетом значения i,
+		который возвращает неразрывный пробел (& nbsp;& nbsp; - (NoBackSPace)) Два пробела, чтобы уравновесить двойной прирост галочек.<br>
+		Второй цикл for записывает от 0 до 2*i+1 (j) возвращает галочки, наращивая их по 2 ^.<br>
+		<br><br>`);
+	i = 0,
+    j = 0;
+	let max = 0;
+	while (true) {
+		max = +prompt('Укажите высоту треугольника')
+		if (Number.isNaN(max)) {
+			alert ('Укажите число!');
+		} else {
+			break;
+		};
+	};
+	space = "",
+	delta = "";
+	document.write (`<div class = "delta">`);
+	while (i < max) {
+	  space = "";
+	  delta = "";
+	  for (j = 0; j < max - i; j++) space += "&nbsp;&nbsp;";
+	  for (j = 0; j < 2*i + 1; j ++) delta += "^";
+	  document.write (space + delta + '<br>');
+	  i++;
+	};
+	document.write (`</div>`);
 };
