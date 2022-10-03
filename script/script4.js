@@ -130,7 +130,7 @@ function task5ArrWeek() {
 	document.write(`<b>А вы знали что сейчас<br>
 		${nowDay} ${arrayMonth[nowMonth]} ${nowYear} года<br>
 		${nowHours}:${String(nowMinutes < 10 ?'0' + nowMinutes : nowMinutes)}</b>`);//для красоты показываем "0" перед минутами до 10
-	document.write(`<table><tr><td><b>Неделя</b></td>`);
+	document.write(`<table><tr><td><b>Неделя:</b></td>`);
 	for (i = 0; i < arrayWeek.length; i++) {
 		if (i == nowWeek) {
 				document.write(`<td class = "today">${arrayWeek[i]}</td>`);
@@ -171,7 +171,7 @@ function task7Arr() {
 	let task7Array = [];
 	let task7SortArray = [];
 	while (true) {
-		i = +prompt ('Вводите числа. Когда устанете - оставьте поле пустым');
+		i = +prompt ('№7.Вводите числа. Когда устанете - оставьте поле пустым');
 		if (i == '') {
 			break;
 		} else if (Number.isNaN(i)) {
@@ -278,12 +278,14 @@ function task11() {
 		Внутри запускаем цикл for от 0 до до высоты треугольника (j) с вычетом значения i,
 		который возвращает неразрывный пробел (& nbsp;& nbsp; - (NoBackSPace)) Два пробела, чтобы уравновесить двойной прирост галочек.<br>
 		Второй цикл for записывает от 0 до 2*i+1 (j) возвращает галочки, наращивая их по 2 ^.<br>
+		<b>Получилась ёлочка. Подробнее в JS</b>
 		<br><br>`);
 	i = 0,
     j = 0;
+	let сhristmas;
 	let max = 0;
 	while (true) {
-		max = +prompt('Укажите высоту треугольника')
+		max = +prompt('№11.Укажите высоту ёлки')
 		if (Number.isNaN(max)) {
 			alert ('Укажите число!');
 		} else {
@@ -297,7 +299,20 @@ function task11() {
 	  space = "";
 	  delta = "";
 	  for (j = 0; j < max - i; j++) space += "&nbsp;&nbsp;";
-	  for (j = 0; j < 2*i + 1; j ++) delta += "^";
+	  for (j = 0; j < 2*i + 1; j ++) {
+	  	сhristmas = Math.random() //для красоты разнообразим нашу "ёлку"
+	  	if (сhristmas > 0.95) {
+	  		delta += `<font color="Red">^</font>`
+	  	} else if (сhristmas > 0.85) {
+	  		delta += `<font color="Blue">^</font>`
+	  	} else if (сhristmas > 0.80) {
+	  		delta += `<font color="Aqua">^</font>`
+	  	} else if (сhristmas > 0.75) {
+	  		delta += `<font color="Gold">^</font>`
+	  	} else {
+	  	delta += "^"
+	  	};
+	  };
 	  document.write (space + delta + '<br>');
 	  i++;
 	};

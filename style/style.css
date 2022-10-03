@@ -7,16 +7,16 @@ p {
 	font-size: 20px;
 }
 div {
+	transition-duration: .3s;
 	margin: 15px 5%;
 	padding: 5px;
-    background-color: #FFF5EE;
-	border: 2px solid gray;
-	transition-duration: .3s;
+    background: linear-gradient(to bottom right, #fff5e4, #ffe4b4);	
+    border: 2px solid gray;
 }
 div:hover {
-	box-shadow: 5px 3px 3px gray;
 	transition-duration: .3s;
-    background-color: #FFDEAD;
+	box-shadow: 5px 3px 3px gray;
+    background: linear-gradient(to bottom right, #ffdea9, #ffc160);
 }
 h1 {
 	text-align: center;
@@ -24,10 +24,11 @@ h1 {
 	display: block;
 	margin: 3px 40%;
 	padding: 2px 15px;
-	background-color: #4169E1;
-	border: 1px solid black;
+	background-color: green;
+	border: thick double #244724;
 	text-shadow: 1px 1px 5px black;
 	box-shadow: 5px 3px 3px #C0C0C0;
+	transition-duration: .3s;
 }
 h2 {
 	display: inline-block;
@@ -95,14 +96,16 @@ li {
 	display: inline-block;
 	margin: 15px 25%;
 	padding: 5px;
-    background-color: black;
+    background: black;
 	color: white;
 	border: 2px solid gray;
 	font-weight: 900;
+	transition-duration: .7s;
 }
 .delta:hover {
 	box-shadow: 5px 3px 3px gray;
-	transition-duration: .3s;
-    background-color: green;
+	transition-duration: .7s;
+	color: #00c217;
+    background: #141414;
 	font-weight: 900;
 }
